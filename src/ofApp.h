@@ -1,8 +1,18 @@
 #pragma once
 
 #include "ofMain.h"
+#include "Rain.h"
 
 class ofApp : public ofBaseApp{
+
+	ofImage outside;
+	ofImage inside;
+
+	vector<Rain*> leftRainDrops;
+	vector<Rain*> rightRainDrops;
+
+	const int NUM_LEFT_DROPS = 50;
+	const int NUM_RIGHT_DROPS = 100;
 
 	public:
 		void setup();
