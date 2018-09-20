@@ -8,11 +8,13 @@ class ofApp : public ofBaseApp{
 	ofImage outside;
 	ofImage inside;
 
+	ofSoundPlayer rainSound;
+
 	vector<Rain*> leftRainDrops;
 	vector<Rain*> rightRainDrops;
 
-	const int NUM_LEFT_DROPS = 50;
-	const int NUM_RIGHT_DROPS = 100;
+	const int NUM_LEFT_DROPS = 250;
+	const int NUM_RIGHT_DROPS = 550;
 
 	public:
 		void setup();

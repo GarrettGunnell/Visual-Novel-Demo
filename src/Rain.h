@@ -16,4 +16,5 @@ private:
 	float width;
 	ofColor color;
 	bool left;
+	float angle;
 };

@@ -3,8 +3,11 @@
 void ofApp::setup() {
 	ofSetVerticalSync(false);
 	ofSetFrameRate(60);
-	outside.load("Outside.png");
+	outside.load("Outside2.png");
 	inside.load("Inside.png");
+	rainSound.load("Rain.mp3");
+	rainSound.play();
+	rainSound.setVolume(0.2f);
 
 	for (int i = 0; i < NUM_LEFT_DROPS; ++i) {
 		leftRainDrops.push_back(new Rain(ofRandom(470, 805), 0, true));
@@ -34,7 +37,7 @@ void ofApp::draw() {
 	}
 	ofSetColor(255);
 	inside.draw(0, 0);
-	ofDrawBitmapString(ofToString(ofGetMouseX()) + ", " + ofToString(ofGetMouseY()), 100, 100);
+	//ofDrawBitmapString(ofToString(ofGetMouseX()) + ", " + ofToString(ofGetMouseY()), 100, 100);
 }
 
 void ofApp::keyPressed(int key) {
