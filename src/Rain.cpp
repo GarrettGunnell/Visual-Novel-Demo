@@ -20,13 +20,15 @@ Rain::Rain(float x, float y, bool left) {
 	}
 	//
 	if (this->width <= 0.15) {
-		this->speed = ofRandom(8, 10);
-		this->color = ofColor(175, ofRandom(75, 125));
+		this->opacity = ofRandom(75, 150);
+		this->speed = ofRandom(9, 10);
+		this->color = ofColor(175, this->opacity);
 		this->length = ofRandom(30, 35);
 	}
 	else {
+		this->opacity = 200;
 		this->speed = ofRandom(11, 12);
-		this->color = ofColor(175, 175);
+		this->color = ofColor(175, this->opacity);
 		this->length = ofRandom(35, 40);
 	}
 }
@@ -41,17 +43,19 @@ void Rain::reset() {
 	}
 	//
 	if (this->width <= 0.15) {
-		this->speed = ofRandom(8, 10);
-		this->color = ofColor(175, ofRandom(75, 125));
+		this->opacity = ofRandom(75, 150);
+		this->speed = ofRandom(9, 10);
+		this->color = ofColor(175, this->opacity);
 		this->length = ofRandom(30, 35);
 	}
 	else {
+		this->opacity = 200;
 		this->speed = ofRandom(11, 12);
-		this->color = ofColor(175, 175);
+		this->color = ofColor(175, this->opacity);
 		this->length = ofRandom(35, 40);
 	}
 	//
-	if (this->left == true) {
+	if (this->left) {
 		this->x = ofRandom(470, 805);
 		this->y = 295 - this->length;
 	}
@@ -65,10 +69,10 @@ void Rain::reset() {
 void Rain::move() {
 	this->y += this->speed;
 	if (this->angle > 0) {
-		this->x += 0.5;
+		this->x += 0.2;
 	}
 	else {
-		this->x -= 0.5;
+		this->x -= 0.2;
 	}
 	if (this->left) {
 		if (this->y > 490) {
@@ -76,6 +80,9 @@ void Rain::move() {
 		}
 	}
 	else {
+		if (this->y > 580) {
+			this->opacity -= 10;
+		}
 		if (this->y > 685) {
 			this->reset();
 		}
@@ -85,7 +92,7 @@ void Rain::move() {
 void Rain::draw() {
 	ofPushMatrix();
 	ofTranslate(this->x, this->y);
-	ofSetColor(this->color);
+	ofSetColor(this->color, this->opacity);
 	ofRotate(this->angle);
 	ofDrawRectangle(0, 0, this->width, this->length);
 	ofPopMatrix();

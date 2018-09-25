@@ -171,11 +171,13 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\DialogueBox.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\Rain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\DialogueBox.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\Rain.h" />
   </ItemGroup>

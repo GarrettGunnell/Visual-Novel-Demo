@@ -17,4 +17,5 @@ private:
 	ofColor color;
 	bool left;
 	float angle;
+	int opacity;
 };

@@ -2,19 +2,30 @@
 
 #include "ofMain.h"
 #include "Rain.h"
+#include "DialogueBox.h"
 
 class ofApp : public ofBaseApp{
 
 	ofImage outside;
 	ofImage inside;
+	ofImage ardenBox;
+	ofImage adrianBox;
+	ofImage kaceyBox;
+	ofImage ardencel1;
+	ofImage ardencel2;
+	ofImage ardencel3;
+	ofImage ardencel4;
+
+	DialogueBox* dialogueBox;
 
 	ofSoundPlayer rainSound;
 
 	vector<Rain*> leftRainDrops;
 	vector<Rain*> rightRainDrops;
+	vector<ofImage*> ardenBlink;
 
-	const int NUM_LEFT_DROPS = 250;
-	const int NUM_RIGHT_DROPS = 550;
+	const int NUM_LEFT_DROPS = 150;
+	const int NUM_RIGHT_DROPS = 250;
 
 	public:
 		void setup();
